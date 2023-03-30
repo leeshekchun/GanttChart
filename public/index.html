@@ -18,6 +18,14 @@
 <body>
   <div id="gantt_here" style='width:100%; height:100%;'></div>
   <script type="text/javascript">
+
     gantt.init("gantt_here");
+
+    gantt.load("data.json");
+
+    var dataProcess = new gantt.dataProcessor("/api");
+    dataProcess.init(gantt);
+    dataProcess.setTransactionMode("REST");
+
   </script>
 </body>
